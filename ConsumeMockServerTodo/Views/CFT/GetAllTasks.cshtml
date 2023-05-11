@@ -1,0 +1,38 @@
+﻿@model List<CFT>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<H1>Get All Data</H1>
+
+<a asp-action="Create" asp-controller="CFT">Add Data</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Completed</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cft in Model)
+        {
+            <tr>
+                <th scope="row">@cft.userId</th>
+                <td>@cft.Id</td>
+                <td>@cft.title</td>
+                <td>@cft.completed</td>
+                <td><a asp-controller="CFT" asp-action="Details" asp-route-taskId="@cft.Id">View</a></td>
+                <td><a asp-controller="CFT" asp-action="Update" asp-route-taskId="@cft.Id">Edit</a></td>
+                <td><a asp-controller="CFT" asp-action="Delete" asp-route-taskId="@cft.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

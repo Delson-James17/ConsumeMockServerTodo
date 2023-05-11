@@ -1,0 +1,18 @@
+﻿@model CFT
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Data Details</h1>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">User ID: @Model.userId</h5>
+        <h6 class="card-subtitle mb-2 text-muted">ID: @Model.Id</h6>
+        <p class="card-text">Title: @Model.title</p>
+        <p class="card-text">Completion Status: @Model.completed</p>
+        <a asp-controller="Task" asp-action="GetAllTasks" class="card-link">Back to list</a>
+
+    </div>
+</div>
